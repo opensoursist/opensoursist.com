@@ -1,17 +1,19 @@
 {
     "compilerOptions": {
+        "module": "esnext",
+        "target": "es2016",
         "jsx": "react",
         "sourceMap": true,
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "module": "commonjs",
-        "target": "es2016",
-        "lib": [
-            "es2017", "dom"
-        ],
         "outDir": "./public",
-        "rootDir": "./src"
+        "lib": [
+            "dom",
+            "es2016",
+            "scripthost",
+            "es2018"
+        ],
     },
     "include": [
         "src/**/*"

@@ -9,8 +9,12 @@
     "build:public": "parcel build src/index.html --out-dir public --public-url / --no-cache",
     "build:public:watch": "parcel src/index.html -p 8100 --no-cache",
     "clean": "rimraf public",
-    "tslint": "tslint --project . src/**/*.ts src/**/*.tsx",
-    "test": "npm run tslint"
+    "lint": "npm run tslint && npm run eslint",
+    "tslint": "tslint --project .",
+    "tslint:fix": "tslint --project . --fix",
+    "eslint": "eslint --ext .ts,.tsx src",
+    "eslint:fix": "eslint --ext .ts,.tsx src --fix",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -28,22 +32,30 @@
   },
   "homepage": "https://github.com/opensoursist/opensoursist.com#readme",
   "devDependencies": {
+    "@types/history": "^4.7.0",
     "@types/react": "^16.4.10",
     "@types/react-dom": "^16.0.7",
     "@types/react-redux": "^6.0.6",
     "@types/react-router-dom": "^4.3.0",
     "@types/react-router-redux": "^5.0.15",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.3.0",
+    "eslint-config-alloy": "^1.4.2",
+    "eslint-plugin-typescript": "^0.12.0",
     "parcel-bundler": "^1.9.7",
     "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
     "tslint-config-alloy": "^0.1.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.1",
+    "typescript-eslint-parser": "^18.0.0"
   },
   "dependencies": {
+    "history": "^4.7.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0"
