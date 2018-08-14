@@ -1,0 +1,51 @@
+{
+  "name": "opensoursist.com",
+  "version": "0.0.0",
+  "description": "小时候我的梦想是当一名科学家，长大了我的梦想是当一名开源家",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npm run build:public:watch",
+    "build": "npm run clean && npm run build:public",
+    "build:public": "parcel build src/index.html --out-dir public --public-url / --no-cache",
+    "build:public:watch": "parcel src/index.html -p 8100 --no-cache",
+    "clean": "rimraf public",
+    "tslint": "tslint --project . src/**/*.ts src/**/*.tsx",
+    "test": "npm run tslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opensoursist/opensoursist.com.git"
+  },
+  "keywords": [
+    "opensoursist",
+    "opensource",
+    "open-source"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opensoursist/opensoursist.com/issues"
+  },
+  "homepage": "https://github.com/opensoursist/opensoursist.com#readme",
+  "devDependencies": {
+    "@types/react": "^16.4.10",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-redux": "^6.0.6",
+    "@types/react-router-dom": "^4.3.0",
+    "@types/react-router-redux": "^5.0.15",
+    "parcel-bundler": "^1.9.7",
+    "rimraf": "^2.6.2",
+    "tslint-config-alloy": "^0.1.0",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0"
+  }
+}

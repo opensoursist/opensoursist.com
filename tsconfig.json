@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "sourceMap": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "module": "commonjs",
+        "target": "es2016",
+        "lib": [
+            "es2017", "dom"
+        ],
+        "outDir": "./public",
+        "rootDir": "./src"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
