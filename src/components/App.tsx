@@ -5,6 +5,7 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 import Header from './Header';
 import TodoDetail from './TodoDetail';
+import Footer from './Footer';
 
 export default class App extends React.Component {
     render() {
@@ -14,6 +15,7 @@ export default class App extends React.Component {
                 <Route exact path="/" component={TodoInput} />
                 <Route exact path="/" component={TodoList} />
                 <Route exact path="/todo/:id" component={TodoDetail} />
+                <Footer />
             </div>
         );
     }

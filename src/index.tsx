@@ -32,10 +32,10 @@ const store = createStore(
     )
 );
 
-render(
+render((
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <App />
         </ConnectedRouter>
     </Provider>
-, document.getElementById('app'));
+), document.getElementById('app'));

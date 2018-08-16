@@ -4,14 +4,18 @@ import { matchPath } from 'react-router';
 import { RootState } from '../';
 
 const mapStateToProps = (state: RootState) => {
-    const matchResult = matchPath<{ id: string }>(state.router.location.pathname, {
+    const matchResult = matchPath<{ id: string }>(state.router.location!.pathname, {
         path: '/todo/:id'
     });
 
-    let id = matchResult && matchResult.params.id;
+    if (matchResult === null) {
+        return { todo: [] };
+    }
+
+    let id = matchResult.params.id;
 
     return {
-        todo: state.todos[id]
+        todo: state.todos![matchResult.params.id]
     };
 };
 
